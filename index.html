@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop POS System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        /* CSS tika ketiya methana damma transition pahasu wenna */
+        .view { display: none; }
+        #pos-system { display: none; }
+    </style>
+</head>
+
+<body>
+   
+    <!-- LOGIN SECTION -->
+    <section id="login-section">
+        <div class="bg-overlay"></div>
+        <div class="login-wrapper">
+            <div class="brand-side">
+                <h1 class="brand-name">COFFEE SHOP</h1>
+                <p class="brand-sub">Management System v1.0</p>
+            </div>
+            <div class="login-box">
+                <h2 class="welcome-text">WELCOME BACK</h2>
+                <p class="login-instruction">Please login to your account</p>
+                <div class="input-container">
+                    <label>User name</label>
+                    <input type="text" id="usernameField">
+                </div>
+                <div class="input-container">
+                    <label>Password</label>
+                    <input type="password" id="passwordField">
+                </div>
+                <button type="button" id="btnLogin">Sign In</button>
+                <div class="forgot-pwd">
+                    <a href="#">Forgot Password?</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POS SYSTEM MAIN CONTAINER -->
+    <div id="pos-system">
+        <header>
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-mug-hot"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home-view" class="nav-item">Home</a></li>
+                    <li><a href="#customer-view" class="nav-item">Customer</a></li>
+                    <li><a href="#item-view" class="nav-item">Item</a></li>
+                    <li><a href="#order-view" class="nav-item">Order</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="content-area">
+            
+            <!-- HOME VIEW -->
+            <section id="home-view" class="view">
+                <div class="dashboard-container">
+                    <div class="dash-card">
+                        <h3>Total Customer</h3>
+                        <h2 id="lblCustCount">0</h2>
+                        <div class="icon-wrapper"><img src="images/image_6.png" alt="customers" /></div>
+                    </div>
+                    <div class="dash-card">
+                        <h3>Total Item</h3>
+                        <h2 id="lblItemCount">0</h2>
+                        <div class="icon-wrapper items-wrapper"><img src="images/image_7.png" alt="items" /></div>
+                    </div>
+                    <div class="dash-card">
+                        <h3>Total Order</h3>
+                        <h2 id="lblOrderCount">0</h2>
+                        <div class="icon-wrapper cart-wrapper"><img src="images/image_8.png" alt="orders" /></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CUSTOMER VIEW -->
+            <section id="customer-view" class="view">
+                <div class="customer-container">
+                    <h1 class="view-title">Customer Registration</h1>
+                    <div class="customer-main-content">
+                        <div class="registration-form">
+                            <div class="cust-input-group"><label>Customer ID</label><input type="text" id="txtCusID" placeholder="C001"></div>
+                            <div class="cust-input-group"><label>Customer Name</label><input type="text" id="txtCusName"></div>
+                            <div class="cust-input-group"><label>Customer Address</label><input type="text" id="txtCusAddress"></div>
+                            <div class="cust-input-group"><label>Customer Salary</label><input type="number" id="txtCusSalary"></div>
+                            <div class="cust-button-grid">
+                                <button class="btn-save" id="btnSaveCus">Save</button>
+                                <button class="btn-update" id="btnUpdateCus">Update</button>
+                                <button class="btn-delete" id="btnDeleteCus">Delete</button>
+                                <button class="btn-clear" id="btnClearCus">Clear</button>
+                            </div>
+                        </div>
+                        <div class="table-container">
+                            <div class="search-section">
+                                <input type="text" id="txtSearchCus" placeholder="Search by ID">
+                                <button id="btnSearchCus">Search</button>
+                            </div>
+                            <div class="table-wrapper">
+                                <table>
+                                    <thead><tr><th>ID</th><th>Name</th><th>Address</th><th>Salary</th></tr></thead>
+                                    <tbody id="tblCustomerBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ITEM VIEW -->
+            <section id="item-view" class="view">
+                <div class="container">
+                    <h1 class="view-title">Items Registration</h1>
+                    <div class="main-content">
+                        <div class="form-panel">
+                            <div class="input-group"><label>Item Code</label><input type="text" id="txtItemCode" placeholder="I001"></div>
+                            <div class="input-group"><label>Item Name</label><input type="text" id="txtItemName"></div>
+                            <div class="input-group"><label>Quantity</label><input type="number" id="txtItemQty"></div>
+                            <div class="input-group"><label>Unit Price</label><input type="number" id="txtItemPrice"></div>
+                            <div class="button-grid">
+                                <button class="btn-save" id="btnSaveItem">Save</button>
+                                <button class="btn-update" id="btnUpdateItem">Update</button>
+                                <button class="btn-delete" id="btnDeleteItem">Delete</button>
+                                <button class="btn-clear" id="btnClearItem">Clear</button>
+                            </div>
+                        </div>
+                        <div class="table-panel">
+                            <div class="search-bar">
+                                <input type="text" id="txtSearchItem" placeholder="Search by Code">
+                                <button id="btnSearchItem">Search</button>
+                            </div>
+                            <div class="table-wrapper">
+                                <table>
+                                    <thead><tr><th>Code</th><th>Name</th><th>Qty</th><th>Price</th></tr></thead>
+                                    <tbody id="tblItemBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ORDER VIEW -->
+            <section id="order-view" class="view">
+                <div class="order-container">
+                    <div class="order-header-card">
+                        <div class="card-title">Place Order</div>
+                        <div class="card-content">
+                            <div class="input-row">
+                                <div class="input-field"><label>Order ID</label><input type="text" id="txtOrderID" readonly></div>
+                                <div class="input-field"><label>Date</label><input type="date" id="txtOrderDate"></div>
+                                <div class="input-field"><label>Customer ID</label><select id="cmbCustomerID"></select></div>
+                                <div class="input-field"><label>Name</label><input type="text" id="txtOrderCusName" readonly></div>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-field"><label>Item Code</label><select id="cmbItemCode"></select></div>
+                                <div class="input-field"><label>Item Name</label><input type="text" id="txtOrderItemName" readonly></div>
+                                <div class="input-field"><label>Qty On Hand</label><input type="text" id="txtOrderQtyOnHand" readonly></div>
+                                <div class="input-field"><label>Unit Price</label><input type="text" id="txtOrderPrice" readonly></div>
+                                <div class="input-field"><label>Order Qty</label><input type="number" id="txtOrderQty"></div>
+                            </div>
+                            <button class="add-to-cart-btn" id="btnAddToCart">Add to Cart</button>
+                            <div class="table-container-order">
+                                <table class="cart-table">
+                                    <thead><tr><th>Code</th><th>Name</th><th>Price</th><th>Qty</th><th>Total</th></tr></thead>
+                                    <tbody id="tblCartBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment-card-footer">
+                        <div class="total-display-panel">
+                            <div class="grand-total">Total : <span id="lblFinalTotal">0.00</span></div>
+                        </div>
+                        <div class="input-field" style="margin-top:10px;">
+                            <label for="txtCash">Cash</label>
+                            <input type="number" id="txtCash" min="0" placeholder="Enter cash amount">
+                        </div>
+                        <div class="input-field" style="margin-top:10px;">
+                            <label for="txtBalance">Balance</label>
+                            <input type="text" id="txtBalance" readonly>
+                        </div>
+                        <button class="place-order-btn" id="btnPlaceOrder">Place Order</button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script type="module" src="db/DB.js"></script>
+    <script type="module" src="conroller/NavigationController.js"></script>
+    <script type="module" src="conroller/LoginController.js"></script>
+    <script type="module" src="conroller/CustomerController.js"></script>
+    <script type="module" src="conroller/ItemController.js"></script>
+    <script type="module" src="conroller/OrderController.js"></script>
+</body>
+
+</html>

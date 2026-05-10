@@ -1,0 +1,690 @@
+.input-field label[for="txtCash"], .input-field label[for="txtBalance"] {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+#txtCash, #txtBalance {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin-top: 3px;
+  background: #f9f9f9;
+  color: #333;
+}
+
+#txtBalance[readonly] {
+  background: #e9ecef;
+  font-weight: bold;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#login-section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  background: url("Screenshot\ 2026-04-03\ at\ 18.51.29.png") no-repeat center
+    center/cover;
+}
+
+.bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1;
+}
+
+.login-wrapper {
+  display: flex;
+  width: 85%;
+  max-width: 1100px;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.brand-name {
+  font-size: 75px;
+  color: #d2b48c;
+  font-weight: 800;
+  margin-bottom: 5px;
+  letter-spacing: 2px;
+}
+
+.brand-sub {
+  font-size: 22px;
+  color: #ffffff;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.login-box {
+  width: 450px;
+  padding: 20px;
+  color: #ffffff;
+}
+
+.welcome-text {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+
+.login-instruction {
+  color: #d2b48c;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.input-container {
+  margin-bottom: 25px;
+}
+
+.input-container label {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  background: #ffffff;
+  outline: none;
+}
+
+#btnLogin {
+  width: 100%;
+  padding: 15px;
+  background-color: #ffb366;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s ease;
+}
+
+#btnLogin:hover {
+  background-color: #ffa347;
+  transform: scale(1.02);
+}
+
+.forgot-pwd {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.forgot-pwd a {
+  color: #ffb366;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+header {
+  background-color: #5d3a1a;
+  padding: 10px 60px;
+  height: 70px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo i {
+  color: white;
+  font-size: 45px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+}
+
+.view {
+  display: none;
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+
+#home-view {
+  display: flex;
+}
+
+.view:target {
+  display: block !important;
+}
+
+
+.view:target ~ #home-view,
+:not(:target) #home-view {
+  display: none;
+}
+
+
+#home-view:target {
+  display: flex !important;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+}
+#home-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 70px); 
+  background-color: #1a100d; 
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: row; 
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap; 
+  padding: 20px;
+  min-height: 80vh; 
+}
+
+.dash-card {
+  background: linear-gradient(145deg,#96704b,#846343); 
+  width: 290px;
+  height: 380px;
+  border-radius: 40px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly; 
+  color: #ffffff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.dash-card:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+
+.icon-wrapper {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.icon-wrapper img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+
+.items-wrapper {
+  background: white;
+  width: 90px;
+  height: 90px;
+  border-radius: 5px; 
+}
+
+.items-wrapper img {
+  width: 70px; 
+  height: 70px;
+}
+
+
+.cart-wrapper {
+  border: 3px solid #4a90e2; 
+  width: 90px;
+  height: 90px;
+  border-radius: 5px;
+  background: transparent;
+}
+
+.cart-wrapper img {
+  width: 70px;
+  height: 70px;
+}
+
+
+.dash-card h3 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.dash-card h2 {
+  font-size: 55px;
+  font-weight: 800;
+}
+
+
+#customer-view {
+  background-color: #1a100d; 
+  min-height: calc(100vh - 70px);
+  padding: 40px;
+  color: white;
+}
+
+.view-title {
+  font-size: 32px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.customer-main-content {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+
+.registration-form {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 450px;
+  color: #333;
+}
+
+.cust-input-group {
+  margin-bottom: 20px;
+}
+
+.cust-input-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.cust-input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+}
+
+
+.cust-button-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.cust-button-grid button {
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-save {
+  background-color: #5cb85c;
+} 
+.btn-update {
+  background-color: #4285f4;
+} 
+.btn-delete {
+  background-color: #d9534f;
+} 
+.btn-clear {
+  background-color: #f0ad4e;
+} 
+
+
+.table-container {
+  flex: 1;
+}
+
+.search-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-section input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+}
+
+.search-section button {
+  background-color: #f0ad4e;
+  padding: 0 25px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.table-wrapper {
+  background: white;
+  border-radius: 5px; 
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #333;
+}
+
+th {
+  background: #ffffff;
+  padding: 15px;
+  text-align: left;
+  border-bottom: 2px solid #eee;
+  font-weight: bold;
+}
+
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.container {
+  padding: 40px;
+  background-color: #1a100d;
+  min-height: 100vh;
+  color: white;
+}
+.view-title {
+  font-size: 32px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+.main-content {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+
+.form-panel {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 450px;
+  color: #333;
+}
+.input-group {
+  margin-bottom: 20px;
+}
+.input-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+}
+
+
+.button-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 25px;
+}
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-save {
+  background-color: #5cb85c;
+}
+.btn-update {
+  background-color: #4285f4;
+}
+.btn-delete {
+  background-color: #d9534f;
+}
+.btn-clear {
+  background-color: #f0ad4e;
+}
+
+
+.table-panel {
+  flex: 1;
+}
+.search-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.search-bar input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+}
+.search-bar button {
+  background-color: #f0ad4e;
+  color: #333;
+  padding: 0 25px;
+}
+
+.table-wrapper {
+  background: white;
+  border-radius: 5px;
+  overflow: hidden;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #333;
+}
+th {
+  background: #eee;
+  padding: 15px;
+  text-align: left;
+}
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.order-container {
+  padding: 30px;
+  background-color: #1a100d;
+}
+
+.order-header-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+.card-title {
+  background: #8b5a2b;
+  color: white;
+  padding: 15px 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+.card-content {
+  padding: 20px;
+}
+
+.input-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+.input-field {
+  flex: 1;
+}
+.input-field-full {
+  width: 100%;
+}
+.input-field label,
+.input-field-full label {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+}
+.input-field input,
+.input-field select,
+.input-field-full input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-divider {
+  border: 0.5px solid #eee;
+  margin: 20px 0;
+}
+.add-to-cart-btn {
+  background: #f0ad4e;
+  color: black;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  height: 38px;
+}
+
+.table-container-order {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+.cart-table th {
+  background: #f8f9fa;
+  padding: 12px;
+  text-align: left;
+  color: #333;
+}
+.cart-table td {
+  padding: 12px;
+  border-top: 1px solid #eee;
+  color: #333;
+}
+
+.payment-card-footer {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0;
+}
+.grand-total {
+  font-size: 45px;
+  font-weight: 800;
+  color: #333;
+  margin-top: 10px;
+}
+.payment-inputs-panel {
+  width: 350px;
+}
+.pay-input {
+  margin-bottom: 10px;
+}
+.pay-input label {
+  font-weight: bold;
+  display: block;
+}
+.pay-input input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.place-order-btn {
+  width: 160px;
+  background: #5cb85c;
+  color: white;
+  padding: 10px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 18px;
+  align-self: flex-end;
+  transition: background 0.2s, transform 0.2s;
+}
+.place-order-btn:hover {
+  background: #449d44;
+  transform: scale(1.04);
+}
+.payment-card-footer .total-display-panel {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.payment-card-footer .input-field {
+  width: 100%;
+  margin-bottom: 8px;
+}
+.payment-card-footer #txtCash,
+.payment-card-footer #txtBalance {
+  margin-bottom: 0;
+}
